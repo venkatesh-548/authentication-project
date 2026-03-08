@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto text-center">
+        <div class="py-5">
+            <h1 class="display-4">Welcome to your Dashboard, {{ user.username }}!</h1>
+            <p class="lead">You are successfully logged in and can access this restricted content.</p>
+            <hr class="my-4">
+            <div class="alert alert-info py-4 mt-5">
+                <h4>User Information</h4>
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Last Login:</strong> {{ user.last_login }}</p>
+            </div>
+            <div class="mt-5">
+                <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-lg">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
